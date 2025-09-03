@@ -28,7 +28,7 @@ const Footer = () => {
         <div>
           <h3 className="text-green-500 text-lg font-semibold mb-3">Get In Touch</h3>
           <p className="text-sm">Pretoria, Centurion<br />South Africa</p>
-          <p className="text-sm mt-2">📞 WhatsApp: <a href="https://wa.me/27625762231" className="hover:text-green-400">+27 625 762 231</a></p>
+          <p className="text-sm mt-2">📞 WhatsApp: <a href="https://wa.me/27840489731" className="hover:text-green-400">+27 84 048 9731</a></p>
           <p className="text-sm">✉️ Email: <a href="mailto:mlulekivelem@gmail.com" className="hover:text-green-400">mlulekivelem@gmail.com</a></p>
           <p className="text-sm">✉️ Email: <a href="mailto:annooronlinemadrassah@gmail.com" className="hover:text-green-400">annooronlinemadrassah@gmail.com</a></p>
         </div>
