@@ -1,0 +1,166 @@
+
+import React from 'react';
+import { FiMail, FiMapPin } from 'react-icons/fi';
+import { BsWhatsapp } from 'react-icons/bs';
+import { FaInstagram } from 'react-icons/fa';
+
+function Contact() {
+  return (
+    <div className="bg-white text-black">
+      {/* Header section with background */}
+      <section className="bg-black text-white py-16 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Contacts</h1>
+        <p className="text-lg md:text-xl max-w-3xl mx-auto mb-6">
+          Contact us for any inquiries regarding courses, pricing, or registration.
+          We are happy to assist you on your journey to Islamic knowledge.
+        </p>
+
+        {/* Footer-style info in header section */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto text-left px-4 md:px-0">
+          <div>
+            <h4 className="text-green-500 font-semibold mb-2">Online Madrassa</h4>
+            <p className="text-sm">
+              We offer Quran, Tajweed, Arabic, and Islamic studies for all ages, 
+              from anywhere in the world — fully online.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-green-500 font-semibold mb-2">Courses Offered</h4>
+            <ul className="text-sm space-y-1">
+              <li>✔️ Quran with Tajweed</li>
+              <li>✔️ Arabic Language</li>
+              <li>✔️ Islamic Studies</li>
+              <li>✔️ Hifz Program</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-green-500 font-semibold mb-2">Availability</h4>
+            <p className="text-sm">
+              Classes available worldwide <br />
+              🌍 24/7 Support <br />
+              🕋 Open to all age groups
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Info */}
+      <section className="px-6 md:px-20 py-14 max-w-7xl mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-12 text-green-700">
+          Contact Information
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-10 mb-14">
+          {/* Left Column */}
+          <div className="space-y-8">
+            {/* Email */}
+            <div className="flex items-start space-x-4">
+              <FiMail className="text-2xl text-green-600 mt-1" />
+              <div>
+                <h4 className="text-lg font-semibold text-black">Email</h4>
+                <p className="text-gray-600">mlulekivelem@gmail.com <br></br> annooronlinemadrassah@gmail.com </p>
+                <small className="text-gray-500">We’ll respond within 24 hours</small>
+              </div>
+            </div>
+
+            {/* WhatsApp */}
+            <div className="flex items-start space-x-4">
+              <div className="rounded-full bg-green-600 p-2">
+                <BsWhatsapp className="text-white text-xl" />
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-black">WhatsApp</h4>
+                <p className="text-gray-600">+27 84 048 9731</p>
+                <a
+                  href="https://wa.me/27840489731"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-600 hover:underline"
+                >
+                  Send us a WhatsApp message
+                </a>
+              </div>
+            </div>
+
+            {/* Location */}
+            <div className="flex items-start space-x-4">
+              <FiMapPin className="text-2xl text-green-600 mt-1" />
+              <div>
+                <h4 className="text-lg font-semibold text-black">Location</h4>
+                <p className="text-gray-600">South Africa, Pretoria, Centurion</p>
+              </div>
+            </div>
+
+            {/* Social Media */}
+            <div className="flex items-start space-x-4">
+              <FaInstagram className="text-2xl text-green-600 mt-1" />
+              <div>
+                <h4 className="text-lg font-semibold text-black">Social Media</h4>
+                <p className="text-gray-600">@online_madrassa-world wide</p>
+                <small className="text-gray-500">Follow for updates & content</small>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Contact Form */}
+          <div className="bg-gray-50 p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-bold text-green-700 mb-4">Send Us a Message</h3>
+            <form
+              action="https://formspree.io/f/xandpjoj"
+              method="POST"
+              className="space-y-4"
+            >
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
+              />
+              <textarea
+                name="message"
+                rows="4"
+                placeholder="Your Message"
+                required
+                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
+              ></textarea>
+
+              {/* Optional: Hidden subject and redirect */}
+              <input type="hidden" name="_subject" value="New Contact Form Submission" />
+              <input type="hidden" name="_next" value="https://your-website.com/thank-you" />
+
+              <button
+                type="submit"
+                className="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+
+        {/* Response Times */}
+        <div className="bg-gray-100 p-6 rounded-md text-sm text-left">
+          <h4 className="text-black font-semibold mb-2">Response Times</h4>
+          <p><strong>Email inquiries:</strong> Within 24 hours</p>
+          <p><strong>WhatsApp messages:</strong> Within 2 hours</p>
+          <p><strong>Support:</strong> 24/7 Available</p>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export default Contact;
+
+
+
