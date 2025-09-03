@@ -21,19 +21,20 @@ function Hero() {
           Empowering Students with Quran & Islamic Knowledge
         </p>
 
-        {/* Buttons with spacing */}
-        <div className="flex justify-center space-x-4">
-          <Link  to="/contact" className="px-8 py-3 border border-white text-white text-lg font-semibold rounded-md hover:bg-white hover:text-black transition">
+        {/* Buttons with responsive sizing */}
+        <div className="flex flex-wrap justify-center gap-4">
+          <Link  
+            to="/contact" 
+            className="px-5 py-2 text-base md:px-8 md:py-3 md:text-lg border border-white text-white font-semibold rounded-md hover:bg-white hover:text-black transition"
+          >
             VIEW COURSES
           </Link>
-          <Link to="/contact" className="px-8 py-3 bg-teal-600 text-white text-lg font-semibold rounded-md hover:bg-white hover:text-black transition">
-                Join Us Now
+          <Link 
+            to="/contact" 
+            className="px-5 py-2 text-base md:px-8 md:py-3 md:text-lg bg-teal-600 text-white font-semibold rounded-md hover:bg-white hover:text-black transition"
+          >
+            Join Us Now
           </Link>
-
-
-
-
-
         </div>
       </div>
     </div>
