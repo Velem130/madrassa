@@ -104,7 +104,7 @@ function Prices() {
       <section className="bg-blue-50 text-black py-16 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">Start Your Journey Today</h2>
         <p className="text-lg mb-6">Join hundreds of students already learning with us.</p>
-        <Link to="/contact" className="px-8 py-4 bg-black text-green-500 rounded-lg font-semibold hover:bg-green-200 transition">
+        <Link to="/contact" className="px-8 py-4 bg-black text-white rounded-lg font-semibold hover:bg-green-200 transition">
           Join Now
         </Link>
       </section>

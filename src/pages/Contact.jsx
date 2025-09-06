@@ -18,7 +18,7 @@ function Contact() {
         {/* Footer-style info in header section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto text-left px-4 md:px-0">
           <div>
-            <h4 className="text-green-500 font-semibold mb-2">Online Madrassa</h4>
+            <h4 className="text-yellow-400 font-semibold mb-2">Online Madrassa</h4>
             <p className="text-sm">
               We offer Quran, Tajweed, Arabic, and Islamic studies for all ages, 
               from anywhere in the world — fully online.
@@ -26,7 +26,7 @@ function Contact() {
           </div>
 
           <div>
-            <h4 className="text-green-500 font-semibold mb-2">Courses Offered</h4>
+            <h4 className="text-yellow-400 font-semibold mb-2">Courses Offered</h4>
             <ul className="text-sm space-y-1">
               <li>✔️ Quran with Tajweed</li>
               <li>✔️ Arabic Language</li>
@@ -36,7 +36,7 @@ function Contact() {
           </div>
 
           <div>
-            <h4 className="text-green-500 font-semibold mb-2">Availability</h4>
+            <h4 className="text-yellow-400 font-semibold mb-2">Availability</h4>
             <p className="text-sm">
               Classes available worldwide <br />
               🌍 24/7 Support <br />

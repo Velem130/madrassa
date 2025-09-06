@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white text-black sticky top-0 z-50">
+    <nav className="bg-white pb-1 text-center text-black sticky top-0 z-50">
       <div className="flex justify-between items-center px-6 py-4">
         <h1 className="text-1xl font-bold">Velem Online Madrassah</h1>
 
