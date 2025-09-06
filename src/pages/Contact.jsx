@@ -1,10 +1,45 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { FiMail, FiMapPin } from 'react-icons/fi';
 import { BsWhatsapp } from 'react-icons/bs';
 import { FaInstagram } from 'react-icons/fa';
 
 function Contact() {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState(null); // 'success', 'error', or null
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus(null);
+
+    try {
+      const response = await fetch('https://formspree.io/f/xandpjoj', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      setStatus('error');
+    }
+
+    setLoading(false);
+  };
+
   return (
     <div className="bg-white text-black">
       {/* Header section with background */}
@@ -60,7 +95,7 @@ function Contact() {
               <FiMail className="text-2xl text-green-600 mt-1" />
               <div>
                 <h4 className="text-lg font-semibold text-black">Email</h4>
-                <p className="text-gray-600">mlulekivelem@gmail.com <br></br> annooronlinemadrassah@gmail.com </p>
+                <p className="text-gray-600">mlulekivelem@gmail.com <br /> annooronlinemadrassah@gmail.com </p>
                 <small className="text-gray-500">We’ll respond within 24 hours</small>
               </div>
             </div>
@@ -107,14 +142,12 @@ function Contact() {
           {/* Right Column - Contact Form */}
           <div className="bg-gray-50 p-6 rounded-lg shadow-md">
             <h3 className="text-xl font-bold text-green-700 mb-4">Send Us a Message</h3>
-            <form
-              action="https://formspree.io/f/xandpjoj"
-              method="POST"
-              className="space-y-4"
-            >
+            <form onSubmit={handleSubmit} className="space-y-4">
               <input
                 type="text"
                 name="name"
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="Your Name"
                 required
                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
@@ -122,28 +155,41 @@ function Contact() {
               <input
                 type="email"
                 name="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="Your Email"
                 required
                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
               />
               <textarea
                 name="message"
+                value={formData.message}
+                onChange={handleChange}
                 rows="4"
                 placeholder="Your Message"
                 required
                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
               ></textarea>
 
-              {/* Optional: Hidden subject and redirect */}
               <input type="hidden" name="_subject" value="New Contact Form Submission" />
               <input type="hidden" name="_next" value="https://your-website.com/thank-you" />
 
               <button
                 type="submit"
-                className="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition"
+                disabled={loading}
+                className={`${
+                  loading ? 'bg-green-400' : 'bg-green-600 hover:bg-green-700'
+                } text-white px-6 py-2 rounded-md transition`}
               >
-                Send Message
+                {loading ? 'Sending...' : 'Send Message'}
               </button>
+
+              {status === 'success' && (
+                <p className="text-green-600 font-semibold mt-2">✅ Your message has been sent successfully!</p>
+              )}
+              {status === 'error' && (
+                <p className="text-red-600 font-semibold mt-2">❌ There was an error sending your message. Please try again later.</p>
+              )}
             </form>
           </div>
         </div>
