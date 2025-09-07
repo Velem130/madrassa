@@ -16,15 +16,14 @@ function Hero() {
           <br /> FOR{' '}
           <span className="text-yellow-400">STUDENTS</span> WORLDWIDE
         </h1>
-        
         <p className="text-lg text-yellow-400 md:text-xl mb-6 tracking-wide">
           Empowering Students with Quran & Islamic Knowledge
         </p>
 
         {/* Buttons with responsive sizing */}
         <div className="flex flex-wrap justify-center gap-4">
-          <Link  
-            to="/contact" 
+          <Link
+            to="/contact"
             className="px-5 py-2 text-base md:px-8 md:py-3 md:text-lg border border-white text-white font-semibold rounded-md hover:bg-white hover:text-black transition"
           >
             VIEW COURSES
