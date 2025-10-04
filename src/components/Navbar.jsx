@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <nav className="bg-white pb-1 text-center text-black sticky top-0 z-50">
       <div className="flex justify-between items-center px-6 py-4">
-        <h1 className="text-1xl font-bold">Velem Online Madrassah</h1>
+        <h1 className="text-1xl font-bold">Raha Online Madrassah</h1>
 
         {/* Hamburger Icon (Mobile only) */}
         <div className="md:hidden text-2xl cursor-pointer" onClick={toggleMenu}>
